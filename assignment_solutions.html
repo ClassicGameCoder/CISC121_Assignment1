@@ -1,4 +1,16 @@
-#Problem 1: 
+# Problem 1: CyclicRotation
+def cylclingOfList(K, A = None):
+  #A is initially set to NullType to ensure user inputs a proper list
+  if A is None or len(A) == 0:
+    A = []
+    return print("Please input a list") 
+  else:
+    #New list will hold the new order of elements
+    reordered = []
+    #Cycle through the whole original list starting from the new initial value and adding to the list until all are accounted.
+    for i in range(len(A)):
+      reordered.append(A[(i + int(K))%(len(A))])
+    return reordered
 
 #Problem 2:
 
