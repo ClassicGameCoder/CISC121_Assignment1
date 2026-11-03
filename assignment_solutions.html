@@ -9,7 +9,7 @@ def cylclingOfList(K, A = None):
     reordered = []
     #Cycle through the whole original list starting from the new initial value and adding to the list until all are accounted.
     for i in range(len(A)):
-      reordered.append(A[(i + int(K))%(len(A))])
+      reordered.append(A[i - K%(len(A))])
     return reordered
 
 # Problem 2: FrogJump
