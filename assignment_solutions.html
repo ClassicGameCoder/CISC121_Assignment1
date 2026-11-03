@@ -12,10 +12,70 @@ def cylclingOfList(K, A = None):
       reordered.append(A[(i + int(K))%(len(A))])
     return reordered
 
-#Problem 2:
+# Problem 2: FrogJump
+def jumpsNeeded(X, Y, N):
+  #X is the starting position, Y is the end position goal, and N is the minimum number of jumps needed. distance value should remain positive.
+  distance = abs(Y - X)
+  if distance % N == 0:
+    #Ensure value returned is an integer
+    return int(distance / N)
+  else:
+    #Ensure value returned is an integer
+    return int(distance / N) + 1
 
-#Problem 3: 
+# Problem 3: PermutCheck
+def permutationCheck(A = None):
+  if A is None or len(A) == 0:
+    A = []
+    return print("Please input a list")
+  else:
+    counter = 0
+    for i in range(1, len(A) + 1):
+      #To avoid counting duplicates in a list, counter increases only when i exists in the list
+      if i in A:
+        counter += 1
+    #List will only have one copy of every number from 1 to the length of list when the counter equals the length
+    if counter == len(A):
+      return 1
+    else:
+      return 0
 
-#Problem 4: 
+# Problem 4: PassingCars
+def carPairPasses(A):
+  #Defining the in-function variables needed. pairCounter records the pairs of cars passing each other.
+  E = [] 
+  W = []
+  pairCounter = 0
+  #Checks the array, then sorts it if it is not empty.
+  if A is None or len(A) == 0:
+    A = []
+    return print("Please input a list containing 0s (car driving east) or 1s (car driving west) only")
+  else:
+    for i in range(len(A)):
+      if A[i] == 0:
+        #All cars headed east are added to array E
+        E.append(i)
+      elif A[i] == 1:
+        #All cars headed west are added array W
+        W.append(i)
+      else:
+        #Warns the user if the array is representing car direction values outside of 0 and 1. Counter should return nothing.
+        print("Please ensure cars are 0 (driving east) or 1 (driving west) only")
+        pairCounter = None
+  #Pairs the cars in both lists
+  for vehicle in range(len(E)):
+    for car in range(len(W)):
+      if E[vehicle] < W[Car]:
+        pairCounter += 1
+  return pairCounter
 
-#Problem 5: 
+#Problem 5: SmallestMissingInteger
+def smallestMissingInteger(A = None):
+  if A is None or len(A) == 0:
+    A = []
+    return print("Please input a list")
+  else:
+    count = 1
+    while count in A:
+      count += 1
+    return count
