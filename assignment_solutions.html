@@ -71,10 +71,12 @@ def carPairPasses(A):
 
 #Problem 5: SmallestMissingInteger
 def smallestMissingInteger(A = None):
+  #Checks input for proper list of numbers
   if A is None or len(A) == 0:
     A = []
     return print("Please input a list")
   else:
+    #count variable starts from an integer value and will only increase if it is found to exist in the list.
     count = 1
     while count in A:
       count += 1
